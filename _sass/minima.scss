@@ -11,8 +11,9 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
-$background-color: #fdfdfd !default;
+$background-color: #e0e0e3 !default;
 $brand-color:      #2a7ae2 !default;
+$header-text-color:      #fff !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -25,6 +26,9 @@ $content-width:    1100px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        1100px !default;
+
+$section-side-width: 300px !default;
+$section-side-bg-color: #EEE !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {

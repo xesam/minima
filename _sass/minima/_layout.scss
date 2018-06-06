@@ -2,8 +2,7 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  background-color: #607d8b;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -11,7 +10,7 @@
 }
 
 .site-title {
-  @include relative-font-size(1.625);
+  @include relative-font-size(1.425);
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
@@ -20,7 +19,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: $header-text-color;
   }
 }
 
@@ -29,7 +28,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
-      display: none;
+    display: none;
   }
 
   .menu-icon {
@@ -37,7 +36,7 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: $header-text-color;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
@@ -100,8 +99,6 @@
   }
 }
 
-
-
 /**
  * Site footer
  */
@@ -136,29 +133,29 @@
 
 .footer-col-1 {
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  width: calc(35% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
   width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: calc(20% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
   width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+    width: calc(50% - (#{$spacing-unit} / 2));
   }
 
   .footer-col-3 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - (#{$spacing-unit} / 2));
   }
 }
 
@@ -166,11 +163,16 @@
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - (#{$spacing-unit} / 2));
   }
 }
 
-
+.footer {
+  padding: $spacing-unit;
+  .wrapper {
+    text-align: center;
+  }
+}
 
 /**
  * Page content
@@ -178,6 +180,43 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+}
+
+/**
+ * content-col
+ */
+
+.section-main {
+  background-color: #fafafa;
+  padding: $spacing-unit;
+}
+
+.section-side {
+  padding: $spacing-unit;
+  width: calc(#{$section-side-width} - (#{$spacing-unit} * 2));
+  background: $section-side-bg-color;
+}
+
+.section-side {
+  .avatar {
+    display: block;
+    border-radius: 50%;
+    width: 135px;
+    height: 135px;
+    margin: 0 auto $spacing-unit;
+  }
+}
+
+.page-content {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 6px #999;
+  }
+
+  .section-main {
+    flex: 1;
+  }
 }
 
 .page-heading {
@@ -193,7 +232,9 @@
   list-style: none;
 
   > li {
+    padding-bottom: $spacing-unit;
     margin-bottom: $spacing-unit;
+    border-bottom: 1px solid #ddd;
   }
 }
 
@@ -207,22 +248,20 @@
   @include relative-font-size(1.5);
 }
 
-
-
 /**
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit;
 }
 
 .post-title {
-  @include relative-font-size(2.625);
+  @include relative-font-size(1.75);
   letter-spacing: -1px;
   line-height: 1;
 
   @include media-query($on-laptop) {
-    @include relative-font-size(2.25);
+    @include relative-font-size(1.75);
   }
 }
 
@@ -251,5 +290,34 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+}
+
+.profile_links {
+  margin: 0;
+  svg {
+    display: inline-block;
+    height: 2em;
+  }
+}
+
+.profile_links li {
+  line-height: 2em;
+  list-style-type: none;
+  a {
+    display: inline-block;
+    height: 2em;
+  }
+}
+
+.newest-posts {
+  h3 {
+    @include relative-font-size(1.1);
+  }
+  ul {
+    margin-left: $spacing-unit/2;
+  }
+  li {
+    list-style-position: inside;
   }
 }
