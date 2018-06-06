@@ -1,0 +1,27 @@
+<div>
+    {% if site.avatar %}
+    <img src="{{ site.avatar }}" alt="{{ site.author }}"> {% endif %}
+
+    <div>{{ site.author }}</div>
+    <p>{{ site.profile }}</p>
+    <p>
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+        {% endif %} {% if site.twitter_username %}
+        <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
+        {% endif %} {% for link in site.profile_links %}
+        <a href="{{ link | last }}">{{ link | first }}</a>
+        {% endfor %}
+    </p>
+</div>
+
+<div>
+    <div>Newest Posts</div>
+    <ul>
+        {% for post in site.posts limit:5 %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
