@@ -189,6 +189,7 @@
 .section-main {
   background-color: #fafafa;
   padding: $spacing-unit;
+  overflow: hidden;
 }
 
 .section-side {
@@ -291,6 +292,18 @@
       @include relative-font-size(1.125);
     }
   }
+  p {
+    @include relative-font-size(0.875);
+  }
+}
+
+.author-section {
+  .info-item {
+    text-align: center;
+  }
+  .profile {
+    @include relative-font-size(0.875);
+  }
 }
 
 .profile_links {
@@ -302,6 +315,7 @@
 }
 
 .profile_links li {
+  text-align: center;
   line-height: 2em;
   list-style-type: none;
   a {
