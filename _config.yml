@@ -44,6 +44,11 @@ minima:
 # Build settings
 theme: minima
 
+paginate: 1
+
+paginate_path: "/page/:num/"
+
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ - jekyll-paginate
